@@ -54,6 +54,7 @@ public class HashTable {
             for (int i = 0; i < list.getSize(); i++) {
                 if (list.get(i).getArea() < area) {
                     list.removeAt(i);
+                    i--; // As list size has been decreased, we decrease iterator
                 }
             }
         }
@@ -66,7 +67,7 @@ public class HashTable {
         for (int i = 0; i < size; i++) {
             SingleLinkedList list = table[i];
             result.append(i).append("\t\t|");
-            if (list == null) {
+            if (list == null || list.getSize() <= 0) {
                 result.append("No element with this hash\n").append("-----------------------------------------------------------------------------------------\n");
                 continue;
             }

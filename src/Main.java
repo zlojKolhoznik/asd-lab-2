@@ -10,6 +10,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int hashTableSize;
         HashTable hashTable;
+        double area;
 
         // Read size of the hash table from user and create hash table with specified size.
         System.out.print("Enter size of hash table: ");
@@ -32,6 +33,14 @@ public class Main {
             i--;    // If we've got this far, triangle is invalid - repeat iteration
         }
 
+        System.out.println(hashTable);
+
+        // Read target area and remove all triangles with area smaller than specified.
+        System.out.print("Enter target area: ");
+        area = scanner.nextDouble();
+        hashTable.removeWhereAreaLessThan(area);
+
+        System.out.println("Table with removed triangles:");
         System.out.println(hashTable);
     }
 

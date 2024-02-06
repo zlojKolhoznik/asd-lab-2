@@ -40,7 +40,7 @@ public class SingleLinkedList {
         return result.data;
     }
 
-    // Method that gets node with specified index.
+    // Method that gets node with specified index. This method is used to avoid code duplication
     private SingleLinkedNode getNode(int index) {
         SingleLinkedNode current = first;
         for (int i = 0; i < index; i++) {
@@ -69,6 +69,7 @@ public class SingleLinkedList {
         if (previous.next == null) {
             last = previous;
         }
+        size--;     // Decrease the size of the list.
     }
 }
 
